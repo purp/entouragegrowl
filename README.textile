@@ -6,9 +6,25 @@ It's just an applescript (or two) that takes info about an Entourage email and s
 
 h2. How do I use it?
 
+That depends ... are you:
+
+h3. More Entourage-y, less programmerly
+
+# Get the GrowlSticky.applescript and GrowlNonSticky.applescript files
+# Open them in Apple's "Script Editor"
+# "Save As..." each of them as type "Script" into a known location (perhaps a folder in your Documents folder)
+# Set up an Entourage rule named "Growl Sticky" which filters only those messages you want to notify you with a sticky Growl notice, set its action to "Run AppleScript", and choose "GrowlSticky.scpt" as its target.
+# Set up an Entourage rule named "Growl Non-Sticky" which filters only those messages you want to notify you with a non-sticky (aka fading) Growl notice, set its action to "Run AppleScript", and choose "GrowlNonSticky.scpt" as its target.
+# Move the "Growl Sticky" rule to the bottom of the list, and the "Growl Non-Sticky" rule just above it.
+
+For example, I like getting non-sticky notice of "high" priority mail, and sticky notice of "highest" priority mail. My "Growl Non-Sticky" rule looks for messages where "Priority Is High"; my "Growl Sticky" rule, "Priority is Highest". You could also use things like "Priority Is Higher Than" combined with the "Do not apply other rules to messages which meet these criteria" checkbox to stop processing at the point it hits your rule.
+
+
+h3. More programmerly, less Entourage-y
+
 # Get the EntourageGrowl.applescript file
 # Open it in Apple's "Script Editor" app
 # Change the values of `minNotify` and `minSticky` to match your preferences. I like things quiet unless it's important, so that's the default setting.
 # Save it as type "Script" in a known place (I like `~/bin`)
-# Set up an Entourage rule for the mailbox(es) you want to Growl about which uses the "Run AppleScript" action to execute the script. You can set which messages you want it to growl about, too (e.g. "all", "non-junk", etc.); you can also choose where to place the rule as a way to filter. I make mine the second rule (just below my "File things I don't care about right now" rule ;). YMMV.
+# Set up an Entourage rule named "Growl" for the mailbox(es) you want to Growl about which uses the "Run AppleScript" action to execute the script. You can set which messages you want it to growl about, too (e.g. "all", "non-junk", etc.); you can also choose where to place the rule as a way to filter. I make mine the second rule (just below my "File things I don't care about right now" rule ;). YMMV.
 
