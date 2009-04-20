@@ -1,0 +1,14 @@
+h1. EntourageGrowl
+
+h2. What is it?
+
+It's just an applescript (or two) that takes info about an Entourage email and sends it to Growl.
+
+h2. How do I use it?
+
+# Get the EntourageGrowl.applescript file
+# Open it in Apple's "Script Editor" app
+# Change the values of `minNotify` and `minSticky` to match your preferences. I like things quiet unless it's important, so that's the default setting.
+# Save it as type "Script" in a known place (I like `~/bin`)
+# Set up an Entourage rule for the mailbox(es) you want to Growl about which uses the "Run AppleScript" action to execute the script. You can set which messages you want it to growl about, too (e.g. "all", "non-junk", etc.); you can also choose where to place the rule as a way to filter. I make mine the second rule (just below my "File things I don't care about right now" rule ;). YMMV.
+
